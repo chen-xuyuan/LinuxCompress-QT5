@@ -27,12 +27,14 @@ int createDir(char* path)
                 if (mkdir(temp, 0777))
                 {
                     perror("mkdir error");
+                    free(temp);
                     return 1;
                 }
             }
             temp[i] = '/';
         }
     }
+    free(temp);
     return 0;
 }
 
@@ -255,6 +257,8 @@ int tar(char* path, FILE* fout)
         char* minor = numberToNChar(MINOR(statBuf.st_rdev), 8);
         copyNByte(block->major, major, 8);
         copyNByte(block->minor, minor, 8);
+        free(major);
+        free(minor);
     }
 
     copyNByte(block->ustar, "ustar  ", 8);
@@ -349,6 +353,7 @@ int tar(char* path, FILE* fout)
                 block->type = HARDLINK;
                 if (strlen(hardLinkPath) > 100) tarLongName(hardLinkPath, fout, LINKLONG);
                 copyLinkName(hardLinkPath, block);
+                if (tarSize) free(tarSize);
                 tarSize = numberToNChar(0, 12);
             }
         }
@@ -425,7 +430,11 @@ int untar(char *path, FILE* fin)
         char* linkPath = NULL;
         char* srcPath = NULL;
 
-        if (tarHead->name[0] == '\0') return 0;
+        if (tarHead->name[0] == '\0')
+        {
+            freeSpace(srcPath,linkPath,tarHead);
+            return 0;
+        }
 
         if (tarHead->type == LINKLONG)
         {
@@ -705,6 +714,19 @@ int freeHuffman(huffmanNode* node)
     return 0;
 }
 
+int freeHuffmanTable()
+{
+    for (int i =0;i<256;i++)
+    {
+        if (huffmanTable[i].length)
+        {
+            free(huffmanTable[i].huffmanCode);
+            huffmanTable[i].length = 0;
+        }
+    }
+    return 0;
+}
+
 int compress(FILE* fin, FILE* fout)
 {
     huffman();
@@ -741,6 +763,7 @@ int compress(FILE* fin, FILE* fout)
     fprintf(fout, "%c", countLength);
 
     freeHuffman(linkNodeHead.node);
+    freeHuffmanTable();
     linkNodeHead.node = NULL;
 
     return 0;
@@ -812,6 +835,7 @@ int uncompress(FILE* fin, FILE* fout)
     }
 
     freeHuffman(linkNodeHead.node);
+    freeHuffmanTable();
     linkNodeHead.node = NULL;
 
     return 0;
