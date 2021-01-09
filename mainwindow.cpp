@@ -66,7 +66,6 @@ void MainWindow::on_tabTarStart_clicked()
     freeINode();
 }
 
-
 void MainWindow::on_tabUntarChooseSrc_clicked()
 {
     QString untarSrcPath = QDir::toNativeSeparators(QFileDialog::getOpenFileName(this,tr("Choose Src File"),QDir::currentPath()));
