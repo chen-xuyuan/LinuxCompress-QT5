@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle("Compress");
+    ui->tabCompressPasswordText->setEchoMode(QLineEdit::PasswordEchoOnEdit);
+    ui->tabUncompressPasswordText->setEchoMode(QLineEdit::PasswordEchoOnEdit);
 
     memset(&iNodeHead, 0, sizeof(iNode));
     memset(&linkNodeHead, 0, sizeof(linkNodeHead));
