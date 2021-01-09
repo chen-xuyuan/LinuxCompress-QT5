@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>701</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tabTar">
+     <attribute name="title">
+      <string>Tar</string>
+     </attribute>
+     <widget class="QPushButton" name="tabTarChooseSrc">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>70</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Src Directory</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabTarChooseDest">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>160</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Dest Directory</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabTarStart">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>330</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start Tar</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabTarSrcText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabTarDestText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>160</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabUntar">
+     <attribute name="title">
+      <string>Untar</string>
+     </attribute>
+     <widget class="QPushButton" name="tabUntarChooseSrc">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>70</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Src File</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabUntarChooseDest">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>160</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Dest Directory</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabUntarStart">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>330</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start Untar</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabUntarSrcText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabUntarDestText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>160</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabCompress">
+     <attribute name="title">
+      <string>Compress</string>
+     </attribute>
+     <widget class="QPushButton" name="tabCompressStart">
+      <property name="geometry">
+       <rect>
+        <x>525</x>
+        <y>330</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start Compress</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabCompressSrcText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabCompressChooseSrc">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>70</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Src File</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabCompressDestText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>160</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabCompressChooseDest">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>160</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Dest Directory</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="tabCompressPasswordCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>250</y>
+        <width>92</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Password</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabCompressPasswordText">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>250</y>
+        <width>331</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabUnCompress">
+     <attribute name="title">
+      <string>Uncompress</string>
+     </attribute>
+     <widget class="QLineEdit" name="tabUncompressSrcText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabUncompressDestText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>160</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabUncompressStart">
+      <property name="geometry">
+       <rect>
+        <x>525</x>
+        <y>330</y>
+        <width>131</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start Uncompress</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabUncompressChooseDest">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>160</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Dest Directory</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabUncompressChooseSrc">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>70</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Src File</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="tabUncompressPasswordCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>250</y>
+        <width>92</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Password</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabUncompressPasswordText">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>250</y>
+        <width>331</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabVerify">
+     <attribute name="title">
+      <string>Verify</string>
+     </attribute>
+     <widget class="QLineEdit" name="tabVerifySrcText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tabVerifyDestText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>160</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabVerifyStart">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>330</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start Verify</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabVerifyChooseDest">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>160</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Dest Directory</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tabVerifyChooseSrc">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>70</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Choose Src File</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
